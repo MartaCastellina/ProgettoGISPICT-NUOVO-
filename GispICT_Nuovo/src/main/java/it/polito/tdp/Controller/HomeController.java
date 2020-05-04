@@ -95,7 +95,13 @@ public class HomeController {
     }
 
     @FXML
-    void handleMostraMagazzino(ActionEvent event) {
+    void handleMostraMagazzino(ActionEvent event) throws IOException {
+    	Parent secondaSchermataParent=FXMLLoader.load(getClass().getResource("/fxml/MagazzinoReparti.fxml"));
+    	Scene secondaSchermataScene=new Scene(secondaSchermataParent);
+    	//Questa riga prende le informazioni dello stage
+    	Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+    	window.setScene(secondaSchermataScene);
+    	window.show();
 
     }
 
