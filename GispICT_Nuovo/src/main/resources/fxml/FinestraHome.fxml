@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="363.0" prefWidth="535.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.Controller.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="363.0" prefWidth="535.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.Controller.HomeController">
    <children>
-      <Button fx:id="btnCercaFarmaco" contentDisplay="CENTER" layoutX="322.0" layoutY="112.0" mnemonicParsing="false" onAction="#handleCercaFarmaco" text="Cerca un farmaco">
+      <Button fx:id="btnCercaFarmaco" contentDisplay="CENTER" layoutX="306.0" layoutY="112.0" mnemonicParsing="false" onAction="#handleCercaFarmaco" prefHeight="36.0" prefWidth="173.0" text="Search for a Medicine">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
@@ -16,7 +16,7 @@
             <Font size="17.0" />
          </font>
       </Button>
-      <Button fx:id="btnAggiungi" alignment="CENTER" contentDisplay="CENTER" layoutX="64.0" layoutY="112.0" mnemonicParsing="false" onAction="#handleAggiungi" text="Aggiungi un farmaco" textAlignment="CENTER">
+      <Button fx:id="btnAggiungi" alignment="CENTER" contentDisplay="CENTER" layoutX="65.0" layoutY="112.0" mnemonicParsing="false" onAction="#handleAggiungi" prefHeight="36.0" prefWidth="169.0" text="Add Medicine" textAlignment="CENTER">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
@@ -34,7 +34,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="btnStatistiche" alignment="CENTER" contentDisplay="CENTER" layoutX="77.0" layoutY="252.0" mnemonicParsing="false" onAction="#handleStatistiche" text="Mostra statistiche" textAlignment="CENTER">
+      <Button fx:id="btnStatistiche" alignment="CENTER" contentDisplay="CENTER" layoutX="62.0" layoutY="252.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="169.0" text="Show Statistics" textAlignment="CENTER">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
@@ -42,7 +42,7 @@
             <Font size="17.0" />
          </font>
       </Button>
-      <Button fx:id="btnMagazzinoReparti" alignment="CENTER" contentDisplay="CENTER" layoutX="291.0" layoutY="252.0" mnemonicParsing="false" onAction="#handleMostraMagazzino" text="Mostra magazzino reparti" textAlignment="CENTER">
+      <Button fx:id="btnMagazzinoReparti" alignment="CENTER" contentDisplay="CENTER" layoutX="304.0" layoutY="252.0" mnemonicParsing="false" onAction="#handleMostraMagazzino" text="Show Repart's Wards" textAlignment="CENTER">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
@@ -50,7 +50,7 @@
             <Font size="17.0" />
          </font>
       </Button>
-      <Button fx:id="btnPreleva" alignment="CENTER" contentDisplay="CENTER" layoutX="83.0" layoutY="182.0" mnemonicParsing="false" onAction="#handlePreleva" text="Preleva farmaco" textAlignment="CENTER">
+      <Button fx:id="btnPreleva" alignment="CENTER" contentDisplay="CENTER" layoutX="64.0" layoutY="182.0" mnemonicParsing="false" onAction="#handlePreleva" prefHeight="36.0" prefWidth="169.0" text="Take Medicine" textAlignment="CENTER">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
@@ -58,7 +58,7 @@
             <Font size="17.0" />
          </font>
       </Button>
-      <Button fx:id="btnInScadenza" alignment="CENTER" contentDisplay="CENTER" layoutX="313.0" layoutY="182.0" mnemonicParsing="false" onAction="#handleInScadenza" text="Farmaci in scadenza" textAlignment="CENTER">
+      <Button fx:id="btnInScadenza" alignment="CENTER" contentDisplay="CENTER" layoutX="307.0" layoutY="182.0" mnemonicParsing="false" onAction="#handleInScadenza" prefHeight="36.0" prefWidth="169.0" text="Expiring medicines" textAlignment="CENTER">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>

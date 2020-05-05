@@ -10,34 +10,58 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="334.0" prefWidth="578.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.Controller.InserisciFarmacoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="334.0" prefWidth="578.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.Controller.InserisciFarmacoController">
    <children>
       <Label layoutX="212.0" layoutY="14.0" text="DigitalMED" textFill="#061d84">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <TextField fx:id="txtIdFarmaco" layoutX="106.0" layoutY="64.0" prefHeight="26.0" prefWidth="160.0" AnchorPane.leftAnchor="106.0" AnchorPane.rightAnchor="292.0">
+      <TextField fx:id="txtIdFarmaco" layoutX="152.0" layoutY="65.0" prefHeight="27.0" prefWidth="80.0" AnchorPane.leftAnchor="142.0" AnchorPane.rightAnchor="356.0">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding></TextField>
-      <Label layoutX="25.0" layoutY="68.0" text="Pharma ID:" />
+      <Label layoutX="49.0" layoutY="69.0" text="Pharma ID:">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
       <TextField fx:id="txtNomeFarmaco" editable="false" layoutX="414.0" layoutY="64.0" prefHeight="18.0" prefWidth="150.0" AnchorPane.leftAnchor="404.0" />
-      <Label layoutX="347.0" layoutY="68.0" text="Name:" AnchorPane.leftAnchor="347.0" />
-      <Label layoutX="25.0" layoutY="122.0" text="Quantity:" AnchorPane.leftAnchor="25.0" />
-      <DatePicker fx:id="date" layoutX="106.0" layoutY="169.0" prefHeight="26.0" prefWidth="174.0" AnchorPane.leftAnchor="120.0" />
-      <Label layoutX="15.0" layoutY="173.0" text="Expiration Date:" />
-      <ComboBox fx:id="comboReparti" layoutX="105.0" layoutY="219.0" promptText="Select your ward" />
-      <Label layoutX="33.0" layoutY="223.0" text="Ward:" />
-      <Button fx:id="btnBack" layoutX="41.0" layoutY="270.0" mnemonicParsing="false" onAction="#handleGoBack" text="Go back to the home" AnchorPane.topAnchor="270.0">
+      <Label layoutX="347.0" layoutY="68.0" text="Name:" AnchorPane.leftAnchor="347.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label layoutX="54.0" layoutY="123.0" text="Quantity:" AnchorPane.leftAnchor="54.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <DatePicker fx:id="date" layoutX="145.0" layoutY="170.0" prefHeight="26.0" prefWidth="174.0" AnchorPane.leftAnchor="145.0" />
+      <Label layoutX="34.0" layoutY="173.0" text="Expiration Date:">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <ComboBox fx:id="comboReparti" layoutX="155.0" layoutY="221.0" promptText="Select your ward" />
+      <Label layoutX="74.0" layoutY="223.0" text="Ward:">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Button fx:id="btnBack" layoutX="33.0" layoutY="286.0" mnemonicParsing="false" onAction="#handleGoBack" text="Go back Home" textFill="#ff2934" AnchorPane.topAnchor="286.0">
          <opaqueInsets>
             <Insets />
-         </opaqueInsets></Button>
-      <Button fx:id="btnConfirm" layoutX="468.0" layoutY="270.0" mnemonicParsing="false" onAction="#handleConfirm" text="Confirm" AnchorPane.topAnchor="280.0" />
-      <TextArea fx:id="allertText" layoutX="351.0" layoutY="198.0" prefHeight="61.0" prefWidth="184.0" AnchorPane.leftAnchor="351.0" />
-      <Label layoutX="347.0" layoutY="173.0" text="Errors:" textFill="#ff0000" AnchorPane.leftAnchor="347.0" />
-      <Button fx:id="btnVerifica" layoutX="280.0" layoutY="64.0" mnemonicParsing="false" onAction="#handleVerifica" text="OK" AnchorPane.leftAnchor="280.0" />
-      <TextField fx:id="txtQty" layoutX="116.0" layoutY="118.0" AnchorPane.leftAnchor="116.0" />
+         </opaqueInsets>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnConfirm" layoutX="477.0" layoutY="288.0" mnemonicParsing="false" onAction="#handleConfirm" text="Confirm" textFill="#28c616" AnchorPane.topAnchor="288.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <TextArea fx:id="allertText" layoutX="369.0" layoutY="203.0" prefHeight="61.0" prefWidth="184.0" AnchorPane.leftAnchor="369.0" />
+      <Label layoutX="367.0" layoutY="173.0" text="Errors:" textFill="#ff0000" AnchorPane.leftAnchor="367.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Button fx:id="btnVerifica" layoutX="240.0" layoutY="64.0" mnemonicParsing="false" onAction="#handleVerifica" prefHeight="25.0" prefWidth="39.0" text="OK" AnchorPane.leftAnchor="230.0" />
+      <TextField fx:id="txtQty" layoutX="142.0" layoutY="120.0" prefHeight="25.0" prefWidth="80.0" AnchorPane.leftAnchor="142.0" />
    </children>
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
