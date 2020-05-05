@@ -115,6 +115,15 @@ public class HomeController {
     	window.show();
     }
 
+    @FXML
+    void handleStatistiche(ActionEvent event) throws IOException {
+    	Parent secondaSchermataParent=FXMLLoader.load(getClass().getResource("/fxml/Statistiche.fxml"));
+    	Scene secondaSchermataScene=new Scene(secondaSchermataParent);
+    	//Questa riga prende le informazioni dello stage
+    	Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+    	window.setScene(secondaSchermataScene);
+    	window.show();
+    }
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
         assert btnCercaFarmaco != null : "fx:id=\"btnCercaFarmaco\" was not injected: check your FXML file 'FinestraHome.fxml'.";

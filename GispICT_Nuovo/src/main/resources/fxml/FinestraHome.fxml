@@ -34,7 +34,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="btnStatistiche" alignment="CENTER" contentDisplay="CENTER" layoutX="77.0" layoutY="252.0" mnemonicParsing="false" text="Mostra statistiche" textAlignment="CENTER">
+      <Button fx:id="btnStatistiche" alignment="CENTER" contentDisplay="CENTER" layoutX="77.0" layoutY="252.0" mnemonicParsing="false" onAction="#handleStatistiche" text="Mostra statistiche" textAlignment="CENTER">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
