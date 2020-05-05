@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="347.0" prefWidth="428.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.Controller.FarmaciInScadenzaController">
+<AnchorPane id="AnchorPane" prefHeight="347.0" prefWidth="428.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.Controller.FarmaciInScadenzaController">
    <children>
       <Label layoutX="159.0" layoutY="14.0" text="DigitalMED" textFill="#061d84">
          <font>
@@ -20,8 +20,14 @@
          </font>
       </Label>
       <TextArea fx:id="txtElenco" editable="false" layoutX="58.0" layoutY="137.0" prefHeight="160.0" prefWidth="336.0" AnchorPane.bottomAnchor="50.0" AnchorPane.topAnchor="137.0" />
-      <Button fx:id="btnBack" layoutX="341.0" layoutY="309.0" mnemonicParsing="false" onAction="#handleGoBack" text="Go back" />
+      <Button fx:id="btnBack" layoutX="27.0" layoutY="308.0" mnemonicParsing="false" onAction="#handleGoBack" text="Go back Home" textFill="#f83333">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
       <ComboBox fx:id="cmbWard" layoutX="58.0" layoutY="64.0" onAction="#popolaTxt" prefWidth="150.0" />
-      <Label layoutX="58.0" layoutY="46.0" text="Select the ward:" />
+      <Label layoutX="58.0" layoutY="46.0" text="Select the ward:">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
    </children>
 </AnchorPane>

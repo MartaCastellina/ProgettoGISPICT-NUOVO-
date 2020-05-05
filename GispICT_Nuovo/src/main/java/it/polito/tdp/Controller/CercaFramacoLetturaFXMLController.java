@@ -80,7 +80,7 @@ public class CercaFramacoLetturaFXMLController {
         	for (int i=0; i<=farmaci.size();i++)
         		{
         		FarmacoNelReparto f=(FarmacoNelReparto) farmaci.get(i);
-        	    aggiungi=aggiungi+""+f.getNomeF()+" = Quantity:"+f.getQuantita()+" -Expire: "+f.getScadenza()+"\n";
+        	    aggiungi=aggiungi+""+f.getNomeF()+" = Quantity:"+f.getQuantita()+" in "+f.getNomeR()+ "-Expire: "+f.getScadenza()+"\n";
         		Reparti.setText(aggiungi);
         		}
         	

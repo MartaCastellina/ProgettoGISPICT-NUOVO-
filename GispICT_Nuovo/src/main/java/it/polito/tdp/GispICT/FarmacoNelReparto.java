@@ -28,6 +28,17 @@ public class FarmacoNelReparto implements Comparable<FarmacoNelReparto> {
 		NomeR = nomeR;
 		RID = rID;
 	}
+	public FarmacoNelReparto() {
+		// TODO Auto-generated constructor stub
+	}
+	public FarmacoNelReparto(FarmacoNelReparto f) {
+		NomeF=f.getNomeF();
+		Scadenza=f.getScadenza();
+		FID=f.getFID();
+		Quantita=f.getQuantita();
+		NomeR=f.getNomeR();
+		RID=f.getRID();
+	}
 	public LocalDate getScadenza() {
 		return Scadenza;
 	}

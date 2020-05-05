@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="343.0" prefWidth="306.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.Controller.StatisticheController">
+<BorderPane prefHeight="440.0" prefWidth="494.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.Controller.StatisticheController">
    <top>
       <Label text="Statistics" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -39,7 +39,7 @@
                   <Insets bottom="15.0" />
                </VBox.margin>
             </HBox>
-            <ImageView fx:id="image" fitHeight="123.0" fitWidth="237.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="image" fitHeight="236.0" fitWidth="444.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@magazzino.PNG" />
                </image>

@@ -12,7 +12,31 @@ import it.polito.tdp.GispICT.FarmacoNelReparto;
 public class LedaDAO {
 
 		public List<FarmacoNelReparto>listaReparti(String nome){
-			String sql = "SELECT IDWard,NameWard,Quantity, NamePharma,IDPharma,ExpDate FROM magazzinoreparti WHERE NamePharma LIKE '%"+nome+"%'";
+			String sql = "SELECT IDWard,NameWard,Quantity, NamePharma,IDPharma,ExpDate FROM magazzinoreparti WHERE NamePharma LIKE '%"+nome+"%'AND IDWard!=106";
+			
+			List<FarmacoNelReparto> result = new ArrayList<FarmacoNelReparto>();
+			
+			Connection conn = DBConnection.getConnection() ;
+			
+			try {
+				PreparedStatement st = conn.prepareStatement(sql) ;
+				
+				ResultSet res = st.executeQuery() ;
+				
+				while(res.next()) {
+					result.add( new FarmacoNelReparto(res.getString("NamePharma"), res.getDate("ExpDate").toLocalDate(),res.getInt("IDPharma"), res.getInt("Quantity"), res.getString("NameWard"), res.getInt("IDWard"))) ;
+				}
+				
+				conn.close();
+				return result ;
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return null ;
+			}
+		}
+		public List<FarmacoNelReparto>listaRepartiP(String nome){
+			String sql = "SELECT IDWard,NameWard,Quantity, NamePharma,IDPharma,ExpDate FROM magazzinoreparti WHERE NamePharma LIKE '%"+nome+"%' AND IDWard=106";
 			
 			List<FarmacoNelReparto> result = new ArrayList<FarmacoNelReparto>();
 			
@@ -116,9 +140,9 @@ public class LedaDAO {
 			      
 			     }
 			   if(qdisp<=rio) {
-			    return "\n La quantità di "+s+" è sotto il livello minimo. \n E'stato inviato un nuovo ordine di "+s;   }
+			    return s+"\n"+s+" quantity is under the minimum level.\n Sent a new order of "+s;   }
 			   
-			   return "";
+			   return s;
 			   
 			  }
 

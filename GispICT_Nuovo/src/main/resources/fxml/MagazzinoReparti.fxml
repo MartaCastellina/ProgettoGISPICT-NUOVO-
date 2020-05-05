@@ -20,8 +20,14 @@
          </font>
       </Label>
       <TextArea fx:id="txtElenco" editable="false" layoutX="58.0" layoutY="137.0" prefHeight="160.0" prefWidth="336.0" AnchorPane.bottomAnchor="50.0" AnchorPane.topAnchor="137.0" />
-      <Button fx:id="btnBack" layoutX="341.0" layoutY="309.0" mnemonicParsing="false" onAction="#handleGoBack" text="Go back" />
+      <Button fx:id="btnBack" layoutX="28.0" layoutY="308.0" mnemonicParsing="false" onAction="#handleGoBack" text="Go back Home" textFill="#fc0d0d">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
       <ComboBox fx:id="cmbWard" layoutX="58.0" layoutY="64.0" onAction="#popolaTxt1" prefWidth="150.0" />
-      <Label layoutX="58.0" layoutY="46.0" text="Select the ward:" />
+      <Label layoutX="58.0" layoutY="46.0" text="Select the ward:">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
    </children>
 </AnchorPane>

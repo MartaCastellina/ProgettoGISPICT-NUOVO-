@@ -48,6 +48,8 @@ public class HomeController {
     @FXML // fx:id="btnInScadenza"
     private Button btnInScadenza; // Value injected by FXMLLoader
    
+    @FXML // fx:id="btnRequest"
+    private Button btnRequest; // Value injected by FXMLLoader
 
     @FXML
     void handleAggiungi(ActionEvent event) throws IOException {
@@ -124,6 +126,15 @@ public class HomeController {
     	window.setScene(secondaSchermataScene);
     	window.show();
     }
+    @FXML
+    void handleRequests(ActionEvent event) throws IOException {
+    	Parent secondaSchermataParent=FXMLLoader.load(getClass().getResource("/fxml/Richieste.fxml"));
+    	Scene secondaSchermataScene=new Scene(secondaSchermataParent);
+    	//Questa riga prende le informazioni dello stage
+    	Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
+    	window.setScene(secondaSchermataScene);
+    	window.show();
+    }
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
         assert btnCercaFarmaco != null : "fx:id=\"btnCercaFarmaco\" was not injected: check your FXML file 'FinestraHome.fxml'.";
@@ -132,7 +143,7 @@ public class HomeController {
         assert btnMagazzinoReparti != null : "fx:id=\"btnMagazzinoReparti\" was not injected: check your FXML file 'FinestraHome.fxml'.";
         assert btnPreleva != null : "fx:id=\"btnPreleva\" was not injected: check your FXML file 'FinestraHome.fxml'.";
         assert btnInScadenza != null : "fx:id=\"btnInScadenza\" was not injected: check your FXML file 'FinestraHome.fxml'.";
-        
+        assert btnRequest != null : "fx:id=\"btnRequest\" was not injected: check your FXML file 'FinestraHome.fxml'.";
     }
 
 	public void setModel(MartaModel model) {

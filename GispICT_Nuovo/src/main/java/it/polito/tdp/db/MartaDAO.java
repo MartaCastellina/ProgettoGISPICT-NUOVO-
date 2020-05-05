@@ -11,9 +11,12 @@ import java.util.List;
 import it.polito.tdp.GispICT.Farmaco;
 import it.polito.tdp.GispICT.FarmacoNelReparto;
 import it.polito.tdp.GispICT.Reparto;
+import it.polito.tdp.GispICT.Richiesta;
 
 public class MartaDAO {
 
+	
+	List<FarmacoNelReparto> farmaciNelReparto=farmaciNelReparto(106); //mi restituisce i farmaci che ho
 	public List<Reparto>listaReparti(){
 		String sql = "SELECT NameWard, IDWard \n" + 
 				"FROM magazzinoreparti \n" + 
@@ -31,6 +34,31 @@ public class MartaDAO {
 			
 			while(res.next()) {
 				result.add(new Reparto(res.getString("NameWard"), res.getInt("IDWard"))) ;
+			}
+			
+			conn.close();
+			return result ;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null ;
+		}
+	}
+
+	private List<FarmacoNelReparto> farmaciNelReparto(int id) {
+		String sql = "SELECT IDWard,NameWard,Quantity, NamePharma,IDPharma,ExpDate FROM magazzinoreparti WHERE IDWard=? ";
+		
+		List<FarmacoNelReparto> result = new ArrayList<FarmacoNelReparto>();
+		
+		Connection conn = DBConnection.getConnection() ;
+		
+		try {
+			PreparedStatement st = conn.prepareStatement(sql) ;
+			st.setInt(1, id);
+			ResultSet res = st.executeQuery() ;
+			
+			while(res.next()) {
+				result.add( new FarmacoNelReparto(res.getString("NamePharma"), res.getDate("ExpDate").toLocalDate(),res.getInt("IDPharma"), res.getInt("Quantity"), res.getString("NameWard"), res.getInt("IDWard"))) ;
 			}
 			
 			conn.close();
@@ -150,4 +178,123 @@ public class MartaDAO {
 			return null ;
 		}
 	}
-}
+
+	public List getRichieste(int id) {
+	
+		
+		String sql = "SELECT IdWardRiceve,NomeRiceve,IdWardRichiede,NomeRichiede,IdPharma,NamePharma,Qty,ExpDate " + 
+				"FROM richieste " + 
+				"WHERE IdWardRiceve=? ";
+
+		
+		List<Richiesta> result = new ArrayList<Richiesta>();
+		
+		Connection conn = DBConnectionMarta.getConnection() ;
+		
+		try {
+			PreparedStatement st = conn.prepareStatement(sql) ;
+			st.setInt(1, id);
+			
+			ResultSet res = st.executeQuery() ;
+			
+			while(res.next()) {
+				result.add(new Richiesta(res.getInt("IdWardRiceve"),res.getString("NomeRiceve"),res.getInt("IdWardRichiede"),
+						res.getString("NomeRichiede"),res.getInt("IdPharma"),res.getString("NamePharma"),res.getInt("Qty"),res.getDate("ExpDate").toLocalDate())) ;
+			}
+			
+			conn.close();
+			return result ;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null ;
+		}
+	}
+
+	public void accetta(Richiesta richiesta) {
+		int quantitaRichiesta=richiesta.getQty();
+		FarmacoNelReparto selezionato=new FarmacoNelReparto();
+		System.out.println(farmaciNelReparto);
+		for (FarmacoNelReparto f: farmaciNelReparto) {
+			if (f.getFID()==richiesta.getIdFarmaco() && f.getScadenza().equals(richiesta.getScadenza())) {
+				selezionato=new FarmacoNelReparto(f);
+				System.out.println(selezionato.toString());
+			}
+		}
+			int nuova= selezionato.getQuantita()-quantitaRichiesta;
+			
+			Date data=Date.valueOf(selezionato.getScadenza());
+			if(nuova==0){
+				String sql="DELETE FROM magazzinoreparti WHERE IDWard=? AND IDPharma=? AND ExpDate=?;";
+				Connection conn = DBConnection.getConnection() ;
+			
+			try {
+				PreparedStatement st = conn.prepareStatement(sql) ;
+				st.setInt(1,selezionato.getRID());
+				st.setInt(2,selezionato.getFID());
+				st.setDate(3,(java.sql.Date) data);
+				
+				st.executeUpdate();
+				
+				conn.close();
+				
+		}catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+	
+				
+			}}
+			else
+			{   
+				String sql="UPDATE magazzinoreparti SET Quantity = ? WHERE IDWard=? AND IDPharma=? AND ExpDate=?;";
+				Connection conn = DBConnection.getConnection() ;
+			
+			try {
+				PreparedStatement st = conn.prepareStatement(sql) ;
+				st.setInt(1,nuova);
+				st.setInt(2,selezionato.getRID());
+				st.setInt(3,selezionato.getFID());
+				st.setDate(4,(java.sql.Date) data);
+				
+				st.executeUpdate();
+				
+				conn.close();
+				
+		}catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+	}
+		
+				
+				
+			}
+		}
+
+	public void cancella(Richiesta richiesta) {
+		String sql="DELETE FROM richieste WHERE IDWard=? AND IDPharma=? AND ExpDate=?";
+		
+		
+		try {
+			Connection conn = DBConnectionMarta.getConnection() ;
+			PreparedStatement st = conn.prepareStatement(sql) ;
+			st.setInt(1,richiesta.getIdRiceve());
+			st.setInt(2,richiesta.getIdFarmaco());
+			st.setDate(3,Date.valueOf(richiesta.getScadenza()));
+			
+			st.executeUpdate();
+			
+			conn.close();
+			
+	}catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+
+			
+		}
+		
+	}
+			
+		
+	}
+	
+
