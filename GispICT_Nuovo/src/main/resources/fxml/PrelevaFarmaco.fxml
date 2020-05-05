@@ -31,7 +31,7 @@
          <font>
             <Font size="14.0" />
          </font></Text>
-      <Text fx:id="disponibile" fill="#02020a" layoutX="186.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Result:">
+      <Text fx:id="disponibile" fill="#02020a" layoutX="259.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="In all wards">
          <font>
             <Font size="14.0" />
          </font>
@@ -41,7 +41,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <ComboBox fx:id="Menureparti" layoutX="88.0" layoutY="131.0" onAction="#Selezionafarmaco" prefHeight="25.0" prefWidth="248.0" />
+      <ComboBox fx:id="Menureparti" layoutX="259.0" layoutY="132.0" onAction="#Selezionafarmaco" prefHeight="25.0" prefWidth="149.0" />
       <ComboBox fx:id="MenuQuantita" layoutX="173.0" layoutY="211.0" onAction="#selQuantita" prefHeight="25.0" prefWidth="66.0" />
       <Text fx:id="quantitadesiderata" layoutX="157.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Quantity" wrappingWidth="99.779296875">
          <font>
@@ -56,5 +56,11 @@
             <Font size="22.0" />
          </font>
       </Label>
+      <ComboBox fx:id="Menureparti1" layoutX="37.0" layoutY="132.0" onAction="#Selezionafarmaco1" prefHeight="25.0" prefWidth="142.0" />
+      <Text fx:id="disponibile1" fill="#02020a" layoutX="37.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="In Pneumology">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
     </children>
 </AnchorPane>
