@@ -41,7 +41,7 @@
             </HBox>
             <ImageView fx:id="image" fitHeight="123.0" fitWidth="237.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../image/magazzino.PNG" />
+                  <Image url="@magazzino.PNG" />
                </image>
             </ImageView>
          </children>

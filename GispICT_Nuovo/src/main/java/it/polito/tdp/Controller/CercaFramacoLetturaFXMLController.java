@@ -47,7 +47,7 @@ public class CercaFramacoLetturaFXMLController {
     private TextField Ricerca;
 
     @FXML
-    private Text Reparti;
+    private TextArea Reparti;
     
     @FXML
     private Button Cerca;
@@ -75,13 +75,13 @@ public class CercaFramacoLetturaFXMLController {
         farmaci=Leda.listaReparti(s);
         javafx.collections.ObservableList<FarmacoNelReparto> farmaco= FXCollections.observableList(farmaci);
         System.out.format(farmaco.toString());
-        Reparti.setText(farmaco.toString());
+        String aggiungi="";
       
         	for (int i=0; i<=farmaci.size();i++)
         		{
         		FarmacoNelReparto f=(FarmacoNelReparto) farmaci.get(i);
-        	
-        		System.out.format("Il farmaco non è presente in magazzino");
+        	    aggiungi=aggiungi+""+f.getNomeF()+" = Quantity:"+f.getQuantita()+" -Expire: "+f.getScadenza()+"\n";
+        		Reparti.setText(aggiungi);
         		}
         	
         	
@@ -95,6 +95,6 @@ public class CercaFramacoLetturaFXMLController {
         assert Ricerca != null : "fx:id=\"Ricerca\" was not injected: check your FXML file 'CercaFarmacoLettura.fxml'.";
         assert Reparti != null : "fx:id=\"Reparti\" was not injected: check your FXML file 'CercaFarmacoLettura.fxml'.";
         assert Cerca != null : "fx:id=\"Cerca\" was not injected: check your FXML file 'CercaFarmacoLettura.fxml'.";
-
+       
     }
 }

@@ -143,6 +143,7 @@ public class InserisciFarmacoController {
     }
     @FXML
     void handleVerifica(ActionEvent event) {
+    	this.model=new MartaModel();
     	try {
 
 			if (txtIdFarmaco.getText().isEmpty()) {
