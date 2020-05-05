@@ -64,18 +64,28 @@ public class CercaFramacoFXMLController {
     private Text quantitadesiderata;
     @FXML
     private TextField Ricerca;
+    
+    @FXML
+    private ComboBox<?> Menureparti1;
+
+    @FXML
+    private Text disponibile1;
+    private Boolean mioreparto;
 
     @FXML
     void handleCercaAction(ActionEvent event) throws IOException {
         Menureparti.getItems().clear();
         Menureparti.setVisible(true);
         disponibile.setVisible(true);
+        Menureparti1.getItems().clear();
+        Menureparti1.setVisible(true);
+        disponibile1.setVisible(true);
     	String s;
     	s=Ricerca.getText();
     	setMenuReparti(s);
     	cancella();
     	 conferma.setText("");
-    
+        setMenuRepartiP(s);
     	
     	
     }
@@ -104,6 +114,26 @@ public class CercaFramacoFXMLController {
     	MenuQuantita.getItems().addAll(lista);
     	MenuQuantita.setVisible(true);
     	quantitadesiderata.setVisible(true);
+    	this.setMioreparto(false);
+    }
+    @FXML
+    void Selezionafarmaco1(ActionEvent event) {
+    	FarmacoNelReparto Farmacosel=(FarmacoNelReparto) Menureparti1.getValue();
+	setTemp(Farmacosel);
+	int qty= Farmacosel.getQuantita();
+	int list=0;
+	List lista= new ArrayList<Integer>();
+	for(int i=1;i<=qty;i++) {
+		
+		list++;
+		lista.add(list);
+		
+	}
+	MenuQuantita.getItems().addAll(lista);
+	MenuQuantita.setVisible(true);
+	quantitadesiderata.setVisible(true);
+	this.setMioreparto(true);
+
     }
     @FXML
     void selQuantita(ActionEvent event) {
@@ -112,8 +142,13 @@ public class CercaFramacoFXMLController {
     	quantitadesiderata.setVisible(false);
     	 Menureparti.setVisible(false);
          disponibile.setVisible(false);
+         Menureparti1.setVisible(false);
+         disponibile1.setVisible(false);
          //setQtemp((int) MenuQuantita.getValue());
-    	conferma.setText("Withdraw "+MenuQuantita.getValue()+" "+getTemp().getNomeF()+" from  "+getTemp().getNomeR()+"?");
+    	if(mioreparto)
+    		{conferma.setText("Withdraw "+MenuQuantita.getValue()+" "+getTemp().getNomeF()+" from  "+getTemp().getNomeR()+"?");}
+    	else
+    		conferma.setText("Send a request to "+getTemp().getNomeR()+" for "+MenuQuantita.getValue()+" "+getTemp().getNomeF()+"?");
     	Invia.setVisible(true);
 
     }
@@ -129,9 +164,12 @@ public class CercaFramacoFXMLController {
 
     @FXML
     void handleInviaAction(ActionEvent event) {
+    	if(mioreparto) {
     Leda.decrementa(getTemp(),(int) MenuQuantita.getValue());
     MenuQuantita.getItems().clear();
-    conferma.setText("Withdrawal of "+Leda.riordino(temp.getNomeF())+"");
+    conferma.setText("Withdrawal of "+Leda.riordino(temp.getNomeF())+"");}
+    	else
+    		conferma.setText("Request sent.");
     Invia.setVisible(false);
     Ricerca.clear();
    
@@ -142,6 +180,12 @@ public class CercaFramacoFXMLController {
         farmaci=Leda.listaReparti(s);
         Collections.sort(farmaci);
         Menureparti.getItems().addAll(farmaci);
+        }
+    void setMenuRepartiP(String s) {
+    	List farmaci= new ArrayList<FarmacoNelReparto>();
+        farmaci=Leda.listaRepartiP(s);
+        Collections.sort(farmaci);
+        Menureparti1.getItems().addAll(farmaci);
         }
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
@@ -155,6 +199,8 @@ public class CercaFramacoFXMLController {
         MenuQuantita.setVisible(false);
         quantitadesiderata.setVisible(false);
         Invia.setVisible(false);
+        Menureparti1.setVisible(false);
+        disponibile1.setVisible(false);
     }
 	public FarmacoNelReparto getTemp() {
 		return temp;
@@ -167,6 +213,12 @@ public class CercaFramacoFXMLController {
 	}
 	public void setQtemp(int qtemp) {
 		Qtemp = qtemp;
+	}
+	public Boolean getMioreparto() {
+		return mioreparto;
+	}
+	public void setMioreparto(Boolean mioreparto) {
+		this.mioreparto = mioreparto;
 	}
 
 }
