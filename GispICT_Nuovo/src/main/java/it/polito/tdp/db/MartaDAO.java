@@ -124,4 +124,30 @@ public class MartaDAO {
 			return null ;
 		}
 	}
+	public String getElencoFarmaci(Reparto reparto) {
+		String result="";
+		
+		String sql = "SELECT IDPharma,NamePharma, ExpDate , Quantity " + 
+				"FROM magazzinoreparti " + 
+				"WHERE IDWard=?";
+	
+		Connection conn = DBConnectionMarta.getConnection() ;
+		
+		try {
+			PreparedStatement st = conn.prepareStatement(sql) ;
+			st.setInt(1, reparto.getRID());
+			ResultSet res = st.executeQuery() ;
+			
+			while(res.next()) {
+				result+= res.getString("NamePharma")+": Quantity = "+res.getInt("Quantity")+" - Expire = "+res.getDate("ExpDate").toLocalDate()+"\n";
+			}
+			
+			conn.close();
+			return result ;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null ;
+		}
+	}
 }
