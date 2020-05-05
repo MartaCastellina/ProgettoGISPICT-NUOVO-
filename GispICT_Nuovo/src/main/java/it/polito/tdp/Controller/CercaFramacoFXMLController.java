@@ -85,7 +85,7 @@ public class CercaFramacoFXMLController {
     	
     	System.out.format("Il farmaco non è presente in magazzino");
     	Menureparti.setVisible(false);
-        disponibile.setText("Il farmaco non è presente in magazzino");}
+        disponibile.setText("Medicine is not available");}
     	
     }
     @FXML
@@ -113,7 +113,7 @@ public class CercaFramacoFXMLController {
     	 Menureparti.setVisible(false);
          disponibile.setVisible(false);
          //setQtemp((int) MenuQuantita.getValue());
-    	conferma.setText("Prelevare "+MenuQuantita.getValue()+" "+getTemp().getNomeF()+" dal reparto "+getTemp().getNomeR()+"?");
+    	conferma.setText("Withdraw "+MenuQuantita.getValue()+" "+getTemp().getNomeF()+" from  "+getTemp().getNomeR()+"?");
     	Invia.setVisible(true);
 
     }
@@ -131,7 +131,7 @@ public class CercaFramacoFXMLController {
     void handleInviaAction(ActionEvent event) {
     Leda.decrementa(getTemp(),(int) MenuQuantita.getValue());
     MenuQuantita.getItems().clear();
-    conferma.setText("Prelievo effettuato"+Leda.riordino(temp.getNomeF()));
+    conferma.setText("Withdrawal of "+Leda.riordino(temp.getNomeF())+"");
     Invia.setVisible(false);
     Ricerca.clear();
    
