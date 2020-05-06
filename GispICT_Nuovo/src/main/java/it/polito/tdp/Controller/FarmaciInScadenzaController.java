@@ -26,6 +26,7 @@ import javafx.stage.Stage;
 
 public class FarmaciInScadenzaController {
 	MartaDAO dao=new MartaDAO();
+	int id=106;
 
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
@@ -52,22 +53,15 @@ public class FarmaciInScadenzaController {
     	window.show();
     }
     @FXML
-    void popolaTxt(ActionEvent event) {    	
-    	txtElenco.setText(dao.getElencoScadenza(cmbWard.getValue()));
+    void popolaTxt() {    	
+    	txtElenco.setText(dao.getElencoScadenza(id));
     }
-    void popolaComboBox() {
-    	cmbWard.getItems().clear();
-    	List reparti=new ArrayList<Reparto>();
-    	reparti=dao.listaReparti();
-    	cmbWard.getItems().addAll(reparti);
-    	
-    }
+   
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
         
         assert btnBack != null : "fx:id=\"btnBack\" was not injected: check your FXML file 'FarmaciInScadenza.fxml'.";
         assert txtElenco != null : "fx:id=\"txtElenco\" was not injected: check your FXML file 'FarmaciInScadenza.fxml'.";
-        assert cmbWard != null : "fx:id=\"cmbWard\" was not injected: check your FXML file 'FarmaciInScadenza.fxml'.";
-        popolaComboBox();
+       popolaTxt();
     }
 }

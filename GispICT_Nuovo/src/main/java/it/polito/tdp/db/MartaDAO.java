@@ -126,22 +126,22 @@ public class MartaDAO {
 		
 	}
 
-	public String getElencoScadenza(Reparto reparto) {
+	public String getElencoScadenza(int id) {
 		String result="";
 		
 		String sql = "SELECT IDPharma,NamePharma, ExpDate " + 
 				"FROM magazzinoreparti " + 
-				"WHERE IDWard=? AND ExpDate>'2020-06-30' AND ExpDate < '2020-07-31' ";
+				"WHERE IDWard=? AND ExpDate>'2020-06-30' AND ExpDate < '2020-08-01' ";
 	
 		Connection conn = DBConnectionMarta.getConnection() ;
 		
 		try {
 			PreparedStatement st = conn.prepareStatement(sql) ;
-			st.setInt(1, reparto.getRID());
+			st.setInt(1, id);
 			ResultSet res = st.executeQuery() ;
 			
 			while(res.next()) {
-				result+=" ["+res.getInt("IDPharma")+"] "+res.getString("NamePharma")+" - Exp: "+res.getDate("ExpDate")+"\n";
+				result+=res.getString("NamePharma")+" [ID:"+res.getInt("IDPharma")+"] "+" - Exp: "+res.getDate("ExpDate")+"\n";
 			}
 			
 			conn.close();
@@ -292,6 +292,58 @@ public class MartaDAO {
 			
 		}
 		
+	}
+
+	public List getFarmaciNelReparto(int id) {
+		String sql = "SELECT IDWard,NameWard,Quantity, NamePharma,IDPharma,ExpDate FROM magazzinoreparti WHERE IDWard=? ";
+		
+		List<FarmacoNelReparto> result = new ArrayList<FarmacoNelReparto>();
+		
+		Connection conn = DBConnection.getConnection() ;
+		
+		try {
+			PreparedStatement st = conn.prepareStatement(sql) ;
+			st.setInt(1, id);
+			
+			ResultSet res = st.executeQuery() ;
+			
+			while(res.next()) {
+				result.add( new FarmacoNelReparto(res.getString("NamePharma"), res.getDate("ExpDate").toLocalDate(),res.getInt("IDPharma"), res.getInt("Quantity"), res.getString("NameWard"), res.getInt("IDWard"))) ;
+			}
+			
+			conn.close();
+			return result ;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null ;
+		}
+	}
+
+	public List<Farmaco> getFarmaci() {
+String sql = "SELECT * FROM farmaci ";
+		
+		List<Farmaco> result = new ArrayList<Farmaco>();
+		
+		Connection conn = DBConnection.getConnection() ;
+		
+		try {
+			PreparedStatement st = conn.prepareStatement(sql) ;
+			
+			
+			ResultSet res = st.executeQuery() ;
+			
+			while(res.next()) {
+				result.add( new Farmaco (res.getInt("IDPharma"),res.getString("Name"))) ;
+			}
+			
+			conn.close();
+			return result ;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null ;
+		}
 	}
 			
 		
