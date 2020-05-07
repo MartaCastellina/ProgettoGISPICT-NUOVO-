@@ -345,7 +345,8 @@ String sql = "SELECT * FROM farmaci ";
 			return null ;
 		}
 	}
-			
+
+	
 		
 	}
 	

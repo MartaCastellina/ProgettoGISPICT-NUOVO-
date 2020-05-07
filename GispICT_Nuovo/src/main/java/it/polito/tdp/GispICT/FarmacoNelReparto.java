@@ -77,8 +77,8 @@ public class FarmacoNelReparto implements Comparable<FarmacoNelReparto> {
 
 	@Override
 	public String toString() {
-		return  NomeF + ","
-				+ Quantita + " unità presenti nel reparto " + NomeR + " con scadenza" + Scadenza + ";\n";
+		return  NomeF + ", there are "
+				+ Quantita + " in " + NomeR + " - ExpDate: " + Scadenza + ";\n";
 	}
 	public ObservableValue<String> FIDO;
 

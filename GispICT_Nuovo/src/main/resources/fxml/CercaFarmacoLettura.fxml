@@ -7,6 +7,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -16,17 +17,17 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Text layoutX="37.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert medicine's name:" AnchorPane.rightAnchor="259.3064453125">
+      <Text layoutX="6.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert the name of the medication: " AnchorPane.rightAnchor="254.68103179931643">
          <font>
             <Font size="14.0" />
          </font></Text>
-      <Button fx:id="Cerca" layoutX="346.0" layoutY="64.0" mnemonicParsing="false" onAction="#Cerca" text="Search">
+      <Button fx:id="Cerca" layoutX="394.0" layoutY="64.0" mnemonicParsing="false" onAction="#Cerca" text="Search">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <TextField fx:id="Ricerca" layoutX="198.0" layoutY="64.0" prefHeight="26.0" prefWidth="118.0" AnchorPane.leftAnchor="198.0" AnchorPane.rightAnchor="121.80000000000001" />
-      <TextArea fx:id="Reparti" layoutX="29.0" layoutY="106.0" prefHeight="171.0" prefWidth="377.0" />
-      <ImageView fitHeight="64.0" fitWidth="130.0" layoutX="331.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
+      <TextField fx:id="Ricerca" layoutX="227.0" layoutY="64.0" prefHeight="26.0" prefWidth="118.0" AnchorPane.leftAnchor="227.0" AnchorPane.rightAnchor="92.80000000000001" />
+      <TextArea fx:id="Reparti" layoutX="29.0" layoutY="106.0" prefHeight="171.0" prefWidth="427.0" />
+      <ImageView fitHeight="64.0" fitWidth="130.0" layoutX="367.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@DigitalMEDLogoPiccolo.jpg" />
          </image>
@@ -41,5 +42,16 @@
             <Font size="14.0" />
          </font>
       </Label>
+      <ImageView fitHeight="26.0" fitWidth="21.0" layoutX="173.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@search.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="206.0" layoutY="14.0" text="Search medication">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Line endX="377.0999755859375" endY="-1.1444091796875E-5" layoutX="104.0" layoutY="39.0" startX="-104.0000228881836" startY="-1.1444091796875E-5" stroke="#bfbdbd" />
     </children>
 </AnchorPane>

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import it.polito.tdp.GispICT.FarmacoNelReparto;
 import it.polito.tdp.GispICT.Reparto;
 import it.polito.tdp.db.MartaDAO;
 import javafx.event.ActionEvent;
@@ -24,6 +25,7 @@ import javafx.stage.Stage;
 
 public class MagazzinoRepartiFXMLController {
 	MartaDAO dao=new MartaDAO();
+	int id=106;
     @FXML
     private Label medication;
 
@@ -39,8 +41,7 @@ public class MagazzinoRepartiFXMLController {
     
     @FXML // fx:id="txtElenco"
     private TextArea txtElenco; // Value injected by FXMLLoader
-    @FXML // fx:id="cmbWard"
-    private ComboBox<Reparto> cmbWard; // Value injected by FXMLLoader
+   
 
     @FXML
     void handleGoBack(ActionEvent event) throws IOException {
@@ -52,11 +53,18 @@ public class MagazzinoRepartiFXMLController {
     	window.show();
     }
     @FXML
-    void popolaTxt1(ActionEvent event) { 
+    void popolaTxt1() { 
     	txtElenco.setVisible(true);
     	medication.setVisible(true);
-    	txtElenco.setText(dao.getElencoFarmaci(cmbWard.getValue()));
+    	String result="";
+    	List<FarmacoNelReparto> farmaci=new ArrayList<FarmacoNelReparto>();
+    	farmaci=dao.getFarmaciNelReparto(id);
+    	for (FarmacoNelReparto f: farmaci) {
+    		result+=f.getNomeF()+": "+f.getQuantita()+" pieces with ExpDate " +f.getScadenza()+"\n";
+    	}
+    	txtElenco.setText(result);
     }
+    /*
     void popolaComboBox() {
     	cmbWard.getItems().clear();
     	List reparti=new ArrayList<Reparto>();
@@ -64,14 +72,15 @@ public class MagazzinoRepartiFXMLController {
     	cmbWard.getItems().addAll(reparti);
     	
     }
+    */
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
     	 assert medication != null : "fx:id=\"medication\" was not injected: check your FXML file 'MagazzinoReparti.fxml'.";
          assert txtElenco != null : "fx:id=\"txtElenco\" was not injected: check your FXML file 'MagazzinoReparti.fxml'.";
          assert btnBack != null : "fx:id=\"btnBack\" was not injected: check your FXML file 'MagazzinoReparti.fxml'.";
-         assert cmbWard != null : "fx:id=\"cmbWard\" was not injected: check your FXML file 'MagazzinoReparti.fxml'.";
-        popolaComboBox();
-        txtElenco.setVisible(false);
+        // assert cmbWard != null : "fx:id=\"cmbWard\" was not injected: check your FXML file 'MagazzinoReparti.fxml'.";
+       // popolaComboBox();
+         popolaTxt1();
         
     }
 }
