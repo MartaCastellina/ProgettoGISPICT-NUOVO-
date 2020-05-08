@@ -104,7 +104,7 @@ public class RichiesteController {
     	System.out.println(richieste.get(1).toString());
     	richiesta=richieste.get(1);
     	dao.accetta(richiesta);
-    	//dao.cancella(richiesta); // NON LA CANCELLA
+    	//dao.cancella(richiesta); // NON LA CANCELLA 
     	txtAccettata2.setVisible(true);
     	btnAccept2.setVisible(false);
     	btnDeny2.setVisible(false);
