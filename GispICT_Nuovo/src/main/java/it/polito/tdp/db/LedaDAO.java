@@ -145,6 +145,31 @@ public class LedaDAO {
 			   return s;
 			   
 			  }
+		public String Farmaci(String s) {
+			String f="";
+String sql = "SELECT IDPharma, Name,Conservation,Link FROM farmaci WHERE Name LIKE '%"+s+"%'";
+			
+			
+			Connection conn = DBConnection.getConnection() ;
+			
+			try {
+				PreparedStatement st = conn.prepareStatement(sql) ;
+				
+				ResultSet res = st.executeQuery() ;
+				
+				while(res.next()) {
+					f+= "["+res.getInt("IDPharma")+"] "+res.getString("Name")+", keep at temperature of "+res.getInt("Conservation")+"°. Link: "+res.getString("Link")+"\n";
+				}
+				
+				conn.close();
+				return f ;
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return null ;
+			}
+			
+		}
 
 
 }

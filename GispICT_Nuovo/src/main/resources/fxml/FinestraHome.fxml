@@ -47,7 +47,7 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="btnPreleva" alignment="CENTER" contentDisplay="CENTER" layoutX="64.0" layoutY="182.0" mnemonicParsing="false" onAction="#handlePreleva" prefHeight="36.0" prefWidth="169.0" text="Take medication" textAlignment="CENTER">
+      <Button fx:id="btnPreleva" alignment="CENTER" contentDisplay="CENTER" layoutX="64.0" layoutY="182.0" mnemonicParsing="false" onAction="#handlePreleva" prefHeight="36.0" prefWidth="169.0" text="Withdraw medication" textAlignment="CENTER">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>

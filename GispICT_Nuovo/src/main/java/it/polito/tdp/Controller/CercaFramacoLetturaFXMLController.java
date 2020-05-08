@@ -66,27 +66,14 @@ public class CercaFramacoLetturaFXMLController {
     void Cerca(ActionEvent event) {
     	String s;
     	s=Ricerca.getText();
-    	setMenuReparti1(s);
+    	Reparti.setText(Leda.Farmaci(s));
 
     }
     
-    void setMenuReparti1(String s) {
-    	List farmaci= new ArrayList<FarmacoNelReparto>();
-        farmaci=Leda.listaReparti(s);
-        javafx.collections.ObservableList<FarmacoNelReparto> farmaco= FXCollections.observableList(farmaci);
-        System.out.format(farmaco.toString());
-        String aggiungi="";
-      
-        	for (int i=0; i<=farmaci.size();i++)
-        		{
-        		FarmacoNelReparto f=(FarmacoNelReparto) farmaci.get(i);
-        	    aggiungi=aggiungi+""+f.getNomeF()+" = Quantity:"+f.getQuantita()+" in "+f.getNomeR()+ "-Expire: "+f.getScadenza()+"\n";
-        		Reparti.setText(aggiungi);
-        		}
-        	
+    
         	
         
-        }
+       
 
     @FXML
     void initialize() {

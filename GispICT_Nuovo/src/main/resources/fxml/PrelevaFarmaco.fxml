@@ -81,5 +81,10 @@
          </font>
       </Label>
       <Line endX="407.99993896484375" endY="-1.1444091796875E-5" layoutX="129.0" layoutY="58.0" startX="-128.99998474121094" startY="-1.1444091796875E-5" stroke="#bfbdbd" />
+      <ImageView fitHeight="26.0" fitWidth="27.0" layoutX="178.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@withdrawicona.jpg" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>
