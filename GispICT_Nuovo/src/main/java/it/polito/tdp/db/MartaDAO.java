@@ -222,7 +222,7 @@ public class MartaDAO {
 			}
 		}
 			int nuova= selezionato.getQuantita()-quantitaRichiesta;
-			
+			System.out.println(selezionato.toString());
 			Date data=Date.valueOf(selezionato.getScadenza());
 			if(nuova==0){
 				String sql="DELETE FROM magazzinoreparti WHERE IDWard=? AND IDPharma=? AND ExpDate=?;";
@@ -271,7 +271,7 @@ public class MartaDAO {
 		}
 
 	public void cancella(Richiesta richiesta) {
-		String sql="DELETE FROM richieste WHERE IDWard=? AND IDPharma=? AND ExpDate=?";
+		String sql="DELETE FROM richieste WHERE IDWardRiceve=? AND IDPharma=? AND ExpDate=? AND IDWardRichiede=?";
 		
 		
 		try {
@@ -280,7 +280,7 @@ public class MartaDAO {
 			st.setInt(1,richiesta.getIdRiceve());
 			st.setInt(2,richiesta.getIdFarmaco());
 			st.setDate(3,Date.valueOf(richiesta.getScadenza()));
-			
+			st.setInt(4, richiesta.getIdRichiede());
 			st.executeUpdate();
 			
 			conn.close();

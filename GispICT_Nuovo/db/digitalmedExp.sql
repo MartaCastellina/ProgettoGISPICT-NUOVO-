@@ -85,7 +85,7 @@ INSERT INTO `magazzinoreparti` (`IDWard`, `NameWard`, `IDPharma`, `NamePharma`, 
 	(101, 'Cardiology', '2', 'Plasil', 70, '2020-05-30', NULL),
 	(106, 'Pneumology', '2', 'Plasil', 60, '2020-07-31', NULL),
 	(100, 'Surgery', '3', 'Lasix', 10, '2020-09-01', NULL),
-	(106, 'Pneumology', '3', 'Lasix', 95, '2021-04-01', NULL),
+	(106, 'Pneumology', '3', 'Lasix', 70, '2021-04-01', NULL),
 	(104, 'Neurology', '4', 'Cardura', 1, '2020-07-01', NULL),
 	(106, 'Pneumology', '4', 'Cardura', 44, '2020-10-01', NULL),
 	(101, 'Cardiology', '5', 'Almarytm', 10, '2020-09-05', NULL),
@@ -94,7 +94,7 @@ INSERT INTO `magazzinoreparti` (`IDWard`, `NameWard`, `IDPharma`, `NamePharma`, 
 	(102, 'Emergency department', '6', 'Deltacortene', 10, '2021-04-01', NULL),
 	(106, 'Pneumology', '6', 'Deltacortene', 20, '2020-07-31', NULL),
 	(103, 'Cardiac Surgery', '8', 'Coumadin', 10, '2021-04-01', NULL),
-	(106, 'Pneumology', '9', 'Mittoval', 80, '2020-07-31', NULL);
+	(106, 'Pneumology', '9', 'Mittoval', 74, '2020-07-31', NULL);
 /*!40000 ALTER TABLE `magazzinoreparti` ENABLE KEYS */;
 
 -- Dump della struttura di tabella digitalmed.richieste
@@ -116,7 +116,7 @@ INSERT INTO `richieste` (`IdWardRiceve`, `NomeRiceve`, `IdWardRichiede`, `NomeRi
 	(100, 'Surgery', 101, 'Cardiology', 1, 'Oki', 10, '2020-07-15'),
 	(106, 'Pneumology', 101, 'Cardiology', 3, 'Lasix', 5, '2021-04-01'),
 	(106, 'Pneumology', 103, 'Cardiac Surgery', 4, 'Cardura', 1, '2020-10-01'),
-	(106, 'Pneumology', 100, 'Surgery', 9, 'Mittoval', 2, '2020-06-02');
+	(106, 'Pneumology', 100, 'Surgery', 9, 'Mittoval', 2, '2020-07-31');
 /*!40000 ALTER TABLE `richieste` ENABLE KEYS */;
 
 -- Dump della struttura di tabella digitalmed.statistiche

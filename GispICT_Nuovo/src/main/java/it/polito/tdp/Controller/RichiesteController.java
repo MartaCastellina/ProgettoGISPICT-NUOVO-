@@ -92,7 +92,7 @@ public class RichiesteController {
     	System.out.println(richieste.get(0).toString());
     	richiesta=richieste.get(0);
     	dao.accetta(richiesta);
-    	dao.cancella(richiesta); // NON LA CANCELLA
+    	//dao.cancella(richiesta); // NON LA CANCELLA
     	txtAccettata1.setVisible(true);
     	btnAccept1.setVisible(false);
     	btnDeny1.setVisible(false);
@@ -113,8 +113,9 @@ public class RichiesteController {
     @FXML
     void handleAccetta3(ActionEvent event) throws IOException {
     	Richiesta richiesta=new Richiesta();
-    	System.out.println(richieste.get(2).toString());
+    	System.out.println("richiesta 3 => " +richieste.get(2).toString());
     	richiesta=richieste.get(2);
+    	System.out.println("richiesta 3 => " +richiesta);
     	dao.accetta(richiesta);
     	//dao.cancella(richiesta); // NON LA CANCELLA
     	txtAccettata3.setVisible(true);
@@ -182,6 +183,7 @@ public class RichiesteController {
 		for (Richiesta r:richieste) {
 			txtArea.appendText("\n"+r.toString()+"\n");
 		}
+		System.out.println(richieste);
 		
 	}
 

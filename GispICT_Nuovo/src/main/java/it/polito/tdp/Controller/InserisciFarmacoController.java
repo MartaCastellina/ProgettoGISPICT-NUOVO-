@@ -71,7 +71,7 @@ public class InserisciFarmacoController {
     @FXML
     void handleConfirm(ActionEvent event) throws IOException {
     	   	
-    	Reparto repartoSelezionato=(Reparto) comboReparti.getValue();
+    //	Reparto repartoSelezionato=(Reparto) comboReparti.getValue();
     	  	
     	
     	try {
@@ -80,11 +80,13 @@ public class InserisciFarmacoController {
 				allertText.setText("Add the ID");
 				return;
 			}
+			/*
 
 			if (comboReparti.getValue() == null) {
 				allertText.setText("Select a ward");
 				return;
 			}
+			*/
 			if (txtQty.getText().isEmpty()) {
 				allertText.setText("Insert qty");
 			}    	
@@ -107,7 +109,7 @@ public class InserisciFarmacoController {
 			LocalDate dataScadenza=date.getValue();
 			
 			FarmacoNelReparto farmacoDaInserire=new FarmacoNelReparto(farmaco.getNome(),dataScadenza,idFarmaco,qty,
-					repartoSelezionato.getNome(),repartoSelezionato.getRID());
+					"Pneumology",106);
 			model.aggiungiFarmacoNelReparto(farmacoDaInserire);
 			
 			
@@ -117,9 +119,6 @@ public class InserisciFarmacoController {
 		} catch (RuntimeException e) {
 			allertText.setText("ERRORE DI CONNESSIONE AL DATABASE!");
 		}
-    	
-	
-    	
     	//Da qui in poi è per passare alla prossima Scena
     	Parent secondaSchermataParent=FXMLLoader.load(getClass().getResource("/fxml/FarmacoInserito.fxml"));
     	Scene secondaSchermataScene=new Scene(secondaSchermataParent);
@@ -127,7 +126,6 @@ public class InserisciFarmacoController {
     	Stage window=(Stage)((Node)event.getSource()).getScene().getWindow();
     	window.setScene(secondaSchermataScene);
     	window.show();
-   	
 
     }
 
@@ -159,6 +157,7 @@ public class InserisciFarmacoController {
 			allertText.setText("ERRORE DI CONNESSIONE AL DATABASE!");
 		}
     }
+    //Questo non lo usiamo più perché abbiamo messo il reparto pneumologia
     void setCombo() {
     	List reparti=new ArrayList <Reparto>();
     	reparti=dao.listaReparti();
@@ -178,7 +177,7 @@ public class InserisciFarmacoController {
          assert btnConfirm != null : "fx:id=\"btnConfirm\" was not injected: check your FXML file 'InserisciFarmaco.fxml'.";
          assert allertText != null : "fx:id=\"allertText\" was not injected: check your FXML file 'InserisciFarmaco.fxml'.";
          assert btnVerifica != null : "fx:id=\"btnVerifica\" was not injected: check your FXML file 'InserisciFarmaco.fxml'.";
-         setCombo();
+        
     }
     /*
 
