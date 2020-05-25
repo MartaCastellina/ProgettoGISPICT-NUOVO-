@@ -99,7 +99,7 @@ public class InserisciFarmacoController {
 			
 			Farmaco farmaco = model.getFarmaco(idFarmaco);
 			if (farmaco == null) {
-				allertText.setText("There is no pharma with this ID, please add a new one");
+				allertText.setText("There is no medication with this ID, please add a new one");
 				return;
 			}
 
@@ -117,7 +117,7 @@ public class InserisciFarmacoController {
 		} catch (NumberFormatException e) {
 			allertText.setText("Insert an IDPharma correct");
 		} catch (RuntimeException e) {
-			allertText.setText("ERRORE DI CONNESSIONE AL DATABASE!");
+			allertText.setText("Error DB Connection");
 		}
     	//Da qui in poi è per passare alla prossima Scena
     	Parent secondaSchermataParent=FXMLLoader.load(getClass().getResource("/fxml/FarmacoInserito.fxml"));
@@ -152,9 +152,10 @@ public class InserisciFarmacoController {
 			Farmaco farmaco = model.getFarmaco(idFarmaco);
 			txtNomeFarmaco.setText(farmaco.getNome());
     	} catch (NumberFormatException e) {
-			allertText.setText("Inserire un ID nel formato corretto.");
+			allertText.setText("Insert a correct ID-form \n(i.e. only numbers are allowed)");
 		} catch (RuntimeException e) {
-			allertText.setText("ERRORE DI CONNESSIONE AL DATABASE!");
+			txtNomeFarmaco.clear();
+			allertText.setText("There is no  medication with this ID. \nPlease send a request to our team!");
 		}
     }
     //Questo non lo usiamo più perché abbiamo messo il reparto pneumologia

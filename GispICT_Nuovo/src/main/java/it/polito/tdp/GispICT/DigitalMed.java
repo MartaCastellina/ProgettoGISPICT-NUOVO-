@@ -1,11 +1,11 @@
 package it.polito.tdp.GispICT;
 
-public class Arduino {
+public class DigitalMed {
 int id;
 int temperatura;
 Reparto reparto;
 int temperaturaMAX;
-public Arduino(int id, int temperatura, Reparto reparto, int temperaturaMAX) {
+public DigitalMed(int id, int temperatura, Reparto reparto, int temperaturaMAX) {
 	super();
 	this.id = id;
 	this.temperatura = temperatura;
@@ -41,7 +41,7 @@ public String toString() {
 	return "Arduino [id=" + id + ", temperatura=" + temperatura + ", reparto=" + reparto + ", temperaturaMAX="
 			+ temperaturaMAX + "]";
 }
-public Arduino(int id, int temperatura) {
+public DigitalMed(int id, int temperatura) {
 	super();
 	this.id = id;
 	this.temperatura = temperatura;

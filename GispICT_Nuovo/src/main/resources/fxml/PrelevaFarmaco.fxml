@@ -29,8 +29,8 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <TextField id="Ins.farmaco" fx:id="Ricerca" layoutX="224.0" layoutY="77.0" />
-      <Text fill="#0d0d0d" layoutX="8.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert the name of the medication">
+      <TextField id="Ins.farmaco" fx:id="Ricerca" layoutX="224.0" layoutY="77.0" AnchorPane.leftAnchor="225.2" AnchorPane.rightAnchor="193.0" />
+      <Text fill="#0d0d0d" layoutX="28.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter medication's name:">
          <font>
             <Font size="14.0" />
          </font></Text>
@@ -75,7 +75,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="217.0" layoutY="23.0" text="Withdraw medication">
+      <Label layoutX="230.0" layoutY="23.0" text="Collect medications">
          <font>
             <Font size="13.0" />
          </font>

@@ -47,7 +47,7 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <TextArea fx:id="allertText" layoutX="369.0" layoutY="203.0" prefHeight="61.0" prefWidth="184.0" AnchorPane.leftAnchor="369.0" />
+      <TextArea fx:id="allertText" layoutX="376.0" layoutY="203.0" prefHeight="80.0" prefWidth="197.0" AnchorPane.bottomAnchor="111.0" AnchorPane.leftAnchor="366.0" />
       <Label layoutX="367.0" layoutY="173.0" text="Errors:" textFill="#ff0000" AnchorPane.leftAnchor="367.0">
          <font>
             <Font size="14.0" />

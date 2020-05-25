@@ -26,7 +26,7 @@ public class MartaMain {
         	
 			MartaModel model=new MartaModel(); //non posso fare le prove qui per cose del controller 	
 			TimerTask task = new TimerTask() { 
-				List<Arduino> result = new ArrayList<Arduino>();
+				List<DigitalMed> result = new ArrayList<DigitalMed>();
 				
 				String sql = "SELECT IDArduino,TempMAX " + 
 						"FROM arduino ";				
@@ -42,7 +42,7 @@ public class MartaMain {
 		    			ResultSet res = st.executeQuery() ;
 		    			
 		    			while(res.next()) {
-		    				result.add(new Arduino(res.getInt("IDArduino"), res.getInt("TempMAX"))) ;
+		    				result.add(new DigitalMed(res.getInt("IDArduino"), res.getInt("TempMAX"))) ;
 		    				conn.close();
 		    				System.out.println(result.toString()) ;
 		    				}
@@ -52,7 +52,7 @@ public class MartaMain {
 		                
 		            }
 		           
-		            for (Arduino a:result) {
+		            for (DigitalMed a:result) {
 		            	if (a.getTemperatura()==100) {
 		            		flag=true;
 		            		// controller.setFlag(flag);

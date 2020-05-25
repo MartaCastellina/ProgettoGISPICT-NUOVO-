@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="363.0" prefWidth="535.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.Controller.HomeController">
    <children>
-      <Button fx:id="btnCercaFarmaco" contentDisplay="CENTER" layoutX="306.0" layoutY="112.0" mnemonicParsing="false" onAction="#handleCercaFarmaco" prefHeight="36.0" prefWidth="173.0" text="Search medication">
+      <Button fx:id="btnCercaFarmaco" contentDisplay="CENTER" layoutX="304.0" layoutY="112.0" mnemonicParsing="false" onAction="#handleCercaFarmaco" prefHeight="36.0" prefWidth="170.0" text="Search medication">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
@@ -18,7 +18,7 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="btnAggiungi" alignment="CENTER" contentDisplay="CENTER" layoutX="65.0" layoutY="112.0" mnemonicParsing="false" onAction="#handleAggiungi" prefHeight="36.0" prefWidth="169.0" text="Add medication" textAlignment="CENTER">
+      <Button fx:id="btnAggiungi" alignment="CENTER" contentDisplay="CENTER" layoutX="64.0" layoutY="112.0" mnemonicParsing="false" onAction="#handleAggiungi" prefHeight="36.0" prefWidth="169.0" text="Add medications" textAlignment="CENTER">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
@@ -39,7 +39,7 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="btnMagazzinoReparti" alignment="CENTER" contentDisplay="CENTER" layoutX="304.0" layoutY="252.0" mnemonicParsing="false" onAction="#handleMostraMagazzino" text="Show Ward Stockage" textAlignment="CENTER">
+      <Button fx:id="btnMagazzinoReparti" alignment="CENTER" contentDisplay="CENTER" layoutX="304.0" layoutY="252.0" mnemonicParsing="false" onAction="#handleMostraMagazzino" prefHeight="35.0" prefWidth="170.0" text="Show Ward Stockage" textAlignment="CENTER">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
@@ -47,7 +47,7 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="btnPreleva" alignment="CENTER" contentDisplay="CENTER" layoutX="64.0" layoutY="182.0" mnemonicParsing="false" onAction="#handlePreleva" prefHeight="36.0" prefWidth="169.0" text="Withdraw medication" textAlignment="CENTER">
+      <Button fx:id="btnPreleva" alignment="CENTER" contentDisplay="CENTER" layoutX="64.0" layoutY="182.0" mnemonicParsing="false" onAction="#handlePreleva" prefHeight="36.0" prefWidth="169.0" text="Collect medications" textAlignment="CENTER">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
@@ -55,7 +55,7 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="btnInScadenza" alignment="CENTER" contentDisplay="CENTER" layoutX="307.0" layoutY="182.0" mnemonicParsing="false" onAction="#handleInScadenza" prefHeight="36.0" prefWidth="169.0" text="Expiring medications" textAlignment="CENTER">
+      <Button fx:id="btnInScadenza" alignment="CENTER" contentDisplay="CENTER" layoutX="304.0" layoutY="182.0" mnemonicParsing="false" onAction="#handleInScadenza" prefHeight="36.0" prefWidth="169.0" text="Expiring medications" textAlignment="CENTER">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
@@ -73,7 +73,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="btnRequest" alignment="CENTER" contentDisplay="CENTER" layoutX="303.0" layoutY="313.0" mnemonicParsing="false" onAction="#handleRequests" prefHeight="36.0" prefWidth="170.0" text="See requests" textAlignment="CENTER">
+      <Button fx:id="btnRequest" alignment="CENTER" contentDisplay="CENTER" layoutX="304.0" layoutY="313.0" mnemonicParsing="false" onAction="#handleRequests" prefHeight="36.0" prefWidth="170.0" text="See requests" textAlignment="CENTER">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>

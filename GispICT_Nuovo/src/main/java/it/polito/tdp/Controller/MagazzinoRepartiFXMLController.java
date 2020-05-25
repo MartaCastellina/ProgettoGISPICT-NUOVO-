@@ -60,7 +60,7 @@ public class MagazzinoRepartiFXMLController {
     	List<FarmacoNelReparto> farmaci=new ArrayList<FarmacoNelReparto>();
     	farmaci=dao.getFarmaciNelReparto(id);
     	for (FarmacoNelReparto f: farmaci) {
-    		result+=f.getNomeF()+": "+f.getQuantita()+" pieces with ExpDate " +f.getScadenza()+"\n";
+    		result+=f.getNomeF()+": "+f.getQuantita()+" units with ExpDate " +f.getScadenza()+"\n";
     	}
     	txtElenco.setText(result);
     }
